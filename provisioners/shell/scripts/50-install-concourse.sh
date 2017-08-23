@@ -1,9 +1,6 @@
 #! /bin/sh
 # -*- shell-script -*-
 
-zypper refresh
-zypper --non-interactive install postgresql
-
 useradd --system concourse
 mkdir -p /etc/concourse
 
