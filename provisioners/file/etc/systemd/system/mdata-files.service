@@ -1,0 +1,13 @@
+[Unit]
+Description=Imports files from mdata
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/import-mdata-files
+RemainAfterExit=true
+ExecStop=/bin/true
+StandardOutput=journal
+
+[Install]
+WantedBy=multi-user.target
