@@ -1,0 +1,13 @@
+[Unit]
+Description=Applies service states from mdata
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/apply-mdata-services
+RemainAfterExit=true
+ExecStop=/bin/true
+StandardOutput=journal
+
+[Install]
+WantedBy=multi-user.target
