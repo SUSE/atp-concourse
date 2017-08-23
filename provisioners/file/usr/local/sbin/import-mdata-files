@@ -28,7 +28,7 @@ PATH=$(/usr/bin/getconf PATH):/usr/sbin
 mdata-list | egrep '^file:' | while read -r key
 do
     file=${key#file:}
-    dir=$(basename ${file})
+    dir=$(dirname ${file})
     mkdir -p "${dir}"
     mdata-get "${key}" | fold -w 72 | openssl base64 -d >"${file}"
 done
