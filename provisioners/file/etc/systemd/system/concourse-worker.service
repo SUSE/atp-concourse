@@ -1,0 +1,22 @@
+[Unit]
+Description=concourse-worker
+Requires=network-online.target
+After=network-online.target
+
+[Service]
+Environment=CONCOURSE_TSA_PUBLIC_KEY=/etc/concourse/tsa.pub
+Environment=CONCOURSE_TSA_WORKER_PRIVATE_KEY=/etc/concourse/worker.key
+Environment=CONCOURSE_WORK_DIR=/data/concourse
+ExecPre=/usr/bin/mkdir /data/concourse
+ExecPre=/usr/bin/chown concourse /data/concourse
+ExecReload=/bin/kill -HUP $MAINPID
+ExecStart=/usr/local/sbin/with-mdata-environment /usr/local/bin/concourse worker
+ExecStop=/usr/local/bin/concourse land-worker
+LimitMEMLOCK=infinity
+LimitNOFILE=infinity
+PermissionsStartOnly=true
+Restart=on-failure
+TasksMax=infinity
+
+[Install]
+WantedBy=multi-user.target
