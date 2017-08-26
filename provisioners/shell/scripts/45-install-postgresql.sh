@@ -2,4 +2,4 @@
 # -*- shell-script -*-
 
 zypper refresh
-zypper --non-interactive install postgresql
+zypper --non-interactive install postgresql postgresql-server
