@@ -14,7 +14,7 @@ Environment=CONCOURSE_TSA_AUTHORIZED_KEYS=/etc/concourse/authorized_keys
 Environment=CONCOURSE_TSA_HOST_KEY=/etc/concourse/tsa.key
 ExecPre=/usr/local/sbin/import-mdata-files
 ExecReload=/bin/kill -HUP $MAINPID
-ExecStart=/usr/local/sbin/with-mdata-environment /usr/bin/concourse web
+ExecStart=/usr/local/sbin/with-mdata-environment /usr/local/bin/concourse web
 PermissionsStartOnly=true
 Restart=on-failure
 
