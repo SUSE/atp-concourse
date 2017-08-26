@@ -10,9 +10,6 @@ Environment=CONCOURSE_BIND_PORT=80
 Environment=CONCOURSE_POSTGRES_SOCKET=/var/run/postgresql
 Environment=CONCOURSE_POSTGRES_USER=atc
 Environment=CONCOURSE_SESSION_SIGNING_KEY=/etc/concourse/session.key
-Environment=CONCOURSE_TLS_BIND_PORT=443
-Environment=CONCOURSE_TLS_CERT=/etc/concourse/atc.crt
-Environment=CONCOURSE_TLS_KEY=/etc/concourse/atc.key
 Environment=CONCOURSE_TSA_AUTHORIZED_KEYS=/etc/concourse/authorized_keys
 Environment=CONCOURSE_TSA_HOST_KEY=/etc/concourse/tsa.key
 ExecPre=/usr/local/sbin/import-mdata-files
