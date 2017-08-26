@@ -8,4 +8,3 @@ curl -Lo /usr/local/bin/concourse https://github.com/concourse/concourse/release
 chmod +x /usr/local/bin/concourse
 
 systemctl daemon-reload
-systemctl enable concourse-worker.service
