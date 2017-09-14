@@ -8,7 +8,7 @@ Environment=CONCOURSE_TSA_PUBLIC_KEY=/etc/concourse/tsa.pub
 Environment=CONCOURSE_TSA_WORKER_PRIVATE_KEY=/etc/concourse/worker.key
 Environment=CONCOURSE_WORK_DIR=/data/concourse
 ExecReload=/bin/kill -HUP $MAINPID
-ExecStartPre=/usr/bin/mkdir /data/concourse
+ExecStartPre=/usr/bin/mkdir -p /data/concourse
 ExecStartPre=/usr/bin/chown concourse /data/concourse
 ExecStartPre=/usr/local/sbin/import-mdata-files
 ExecStart=/usr/local/sbin/with-mdata-environment /usr/local/bin/concourse worker
