@@ -9,9 +9,9 @@ chmod +x /usr/local/bin/concourse
 
 systemctl daemon-reload
 
-systemctl start postgresql
+systemctl start postgresql.service
 
 sudo -u postgres -- createuser --superuser atc
 sudo -u postgres -- createdb --owner atc atc
 
-systemctl stop postgresql
+systemctl stop postgresql.service
