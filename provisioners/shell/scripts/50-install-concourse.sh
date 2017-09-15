@@ -8,3 +8,10 @@ curl -Lo /usr/local/bin/concourse https://github.com/concourse/concourse/release
 chmod +x /usr/local/bin/concourse
 
 systemctl daemon-reload
+
+systemctl start postgresql
+
+sudo -u postgres -- createuser --superuser atc
+sudo -u postgres -- createdb --owner atc atc
+
+systemctl stop postgresql
