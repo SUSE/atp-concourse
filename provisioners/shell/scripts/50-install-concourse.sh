@@ -4,7 +4,7 @@
 useradd --system concourse
 mkdir -p /etc/concourse
 
-curl -Lo /usr/local/bin/concourse https://github.com/concourse/concourse/releases/download/v3.4.1/concourse_linux_amd64
+curl -Lo /usr/local/bin/concourse https://github.com/concourse/concourse/releases/download/v3.6.0/concourse_linux_amd64
 chmod +x /usr/local/bin/concourse
 
 systemctl daemon-reload
